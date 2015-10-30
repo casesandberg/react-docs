@@ -1,14 +1,14 @@
 /* jshint node: true, esnext: true */
 "use strict";
 
-var React = require('react');
-var ReactCSS = require('reactcss');
-var markdown = require('../helpers/markdown');
+import React from 'react';
+import ReactCSS from 'reactcss';
+import markdown from '../helpers/markdown';
 
-var { Tile } = require('../../modules/react-material-design/index');
-var SidebarItem = require('./SidebarItem');
+import { Tile } from '../../modules/react-material-design/index';
+import SidebarItem from './SidebarItem';
 
-module.exports = class Sidebar extends ReactCSS.Component {
+export class Sidebar extends ReactCSS.Component {
 
   classes() {
     return {
@@ -78,3 +78,5 @@ module.exports = class Sidebar extends ReactCSS.Component {
     );
   }
 };
+
+export default Sidebar;

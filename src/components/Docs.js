@@ -10,7 +10,7 @@ import Markdown from './Markdown';
 import Code from './Code';
 import Sidebar from './Sidebar';
 
-class Docs extends ReactCSS.Component {
+export class Docs extends ReactCSS.Component {
 
   constructor() {
     super();
@@ -182,4 +182,4 @@ Docs.defaultProps = {
   primaryColor: '#03A9F4',
 };
 
-module.exports = Docs;
+export default Docs;
