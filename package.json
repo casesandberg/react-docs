@@ -11,5 +11,17 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/casesandberg/react-docs.git"
+  },
+  "jspm": {
+    "dependencies": {
+      "jsx": "npm:jspm-loader-jsx@^0.0.7",
+      "react": "npm:react@^0.14.1",
+      "react-dom": "npm:react-dom@^0.14.1"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
   }
 }
