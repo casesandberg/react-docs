@@ -5,7 +5,7 @@ var ReactCSS = require('reactcss');
 var markdown = require('../helpers/markdown');
 var context = require('react-context');
 
-var { Tile, Raised } = require('../../../react-material-design');
+var { Tile, Raised } = require('../../modules/react-material-design/index');
 
 class Code extends ReactCSS.Component {
 
