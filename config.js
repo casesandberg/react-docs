@@ -27,6 +27,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.29",
     "core-js": "npm:core-js@1.2.3",
     "highlight.js": "npm:highlight.js@8.9.1",
+    "jsx": "npm:jspm-loader-jsx@0.0.7",
     "lodash": "npm:lodash@3.10.1",
     "react": "npm:react@0.14.1",
     "react-context": "npm:react-context@0.0.2",

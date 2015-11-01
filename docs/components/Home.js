@@ -4,8 +4,7 @@ import React from 'react';
 
 import { Docs } from '../../src/index.js';
 
-
-```
+var cssFile = `
 /*
 # Accordion
 
@@ -49,13 +48,12 @@ import { Docs } from '../../src/index.js';
 .accordion__copy--open {
   display: block;
 }
-```
-
+`;
 
 export class Home extends React.Component {
 
   render() {
-    return <Docs />;
+    return <Docs markdown={[cssFile]}/>;
   }
 }
 
