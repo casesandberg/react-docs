@@ -28,6 +28,9 @@ export class MaterialStyle extends ReactCSS.Component {
           margin: '0 15px',
           boxShadow: 'inset 0 -1px 0 #eee',
         },
+        body: {
+          padding: '30px',
+        },
       },
     };
   }
@@ -42,7 +45,9 @@ export class MaterialStyle extends ReactCSS.Component {
           <div style={ this.styles().divider }>
             <Breadcrumbs route={ this.props.route } />
           </div>
-          Material Style
+          <div style={ this.styles().body }>
+            Material Style
+          </div>
         </div>
       </div>
     );
