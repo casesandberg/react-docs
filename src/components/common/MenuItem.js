@@ -5,10 +5,12 @@ import ReactCSS from 'reactcss';
 
 export class MenuItem extends ReactCSS.Component {
 
-  constructor() {
+  constructor(props) {
     super();
+    var splitPath = String(props.partialPath).split('/');
     this.state = {
-      isOpen: false,
+      isOpen: splitPath[0] === props.label || false,
+      splitPath: splitPath,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -47,6 +49,11 @@ export class MenuItem extends ReactCSS.Component {
           transform: 'rotate(180deg)',
         },
       },
+      'active': {
+        label: {
+          fontWeight: 'bold',
+        },
+      },
     };
   }
 
@@ -54,6 +61,7 @@ export class MenuItem extends ReactCSS.Component {
     return this.css({
       'has-children': this.props.children != null,
       'open': this.state.isOpen,
+      'active': this.state.splitPath.length === 1,
     });
   }
 
@@ -70,8 +78,8 @@ export class MenuItem extends ReactCSS.Component {
         </div>
 
         { this.props.children ? <div style={ this.styles().children }>
-          { this.props.children.map(function(item, i) {
-            return <MenuItem key={ i } {...item} />;
+          { this.props.children.map((item, i) => {
+            return <MenuItem key={ i } partialPath={ this.state.splitPath.unshift() } {...item} />;
           }) }
         </div> : null }
 

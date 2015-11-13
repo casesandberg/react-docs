@@ -28,7 +28,7 @@ export class MaterialStyleSidebar extends ReactCSS.Component {
       <div>
         <div style={ this.styles().logo }><strong>Style</strong>Hub</div>
         <div style={ this.styles().menu }>
-          <MaterialStyleSidebarMenu />
+          <MaterialStyleSidebarMenu route={ this.props.route } />
         </div>
       </div>
     );

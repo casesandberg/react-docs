@@ -20,6 +20,7 @@ export class Docs extends ReactCSS.Component {
       sidebarFixed: false,
       visible: false,
       files: {},
+      route: 'Design/foo bar',
     };
     this.changeSelection = this.changeSelection.bind(this);
     this.attachSidebar = this.attachSidebar.bind(this);
@@ -178,7 +179,7 @@ export class Docs extends ReactCSS.Component {
     //   </div>
     // );
 
-    return <MaterialStyle />;
+    return <MaterialStyle route={ this.state.route } />;
   }
 }
 

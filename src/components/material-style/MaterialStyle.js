@@ -31,7 +31,7 @@ export class MaterialStyle extends ReactCSS.Component {
     return (
       <div style={ this.styles().wrap }>
         <div style={ this.styles().sidebar }>
-          <MaterialStyleSidebar />
+          <MaterialStyleSidebar route={ this.props.route } />
         </div>
         <div style={ this.styles().content }>
           Material Style

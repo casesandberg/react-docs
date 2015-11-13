@@ -54,7 +54,7 @@ export class MaterialStyleSidebarMenu extends ReactCSS.Component {
               },
             ],
           },
-        ]}/>
+        ]} route={ this.props.route } />
       </div>
     );
   }

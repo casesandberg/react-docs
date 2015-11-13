@@ -18,8 +18,8 @@ export class Menu extends ReactCSS.Component {
   render() {
     return (
       <div>
-        { this.props.items.map(function(item, i) {
-          return <MenuItem key={ i } {...item} />;
+        { this.props.items.map((item, i) => {
+          return <MenuItem partialPath={ this.props.route } key={ i } {...item} />;
         }) }
       </div>
     );
