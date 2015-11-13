@@ -4,6 +4,7 @@ import React from 'react';
 import ReactCSS from 'reactcss';
 
 import MaterialStyleSidebar from './MaterialStyleSidebar';
+import Breadcrumbs from '../common/Breadcrumbs';
 
 export class MaterialStyle extends ReactCSS.Component {
 
@@ -23,6 +24,10 @@ export class MaterialStyle extends ReactCSS.Component {
         content: {
           flex: '1',
         },
+        divider: {
+          margin: '0 15px',
+          boxShadow: 'inset 0 -1px 0 #eee',
+        },
       },
     };
   }
@@ -34,6 +39,9 @@ export class MaterialStyle extends ReactCSS.Component {
           <MaterialStyleSidebar route={ this.props.route } />
         </div>
         <div style={ this.styles().content }>
+          <div style={ this.styles().divider }>
+            <Breadcrumbs route={ this.props.route } />
+          </div>
           Material Style
         </div>
       </div>
