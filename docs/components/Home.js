@@ -4,7 +4,8 @@ import React from 'react';
 
 import { Docs } from '../../src/index.js';
 
-var cssFile = `
+var file =
+`
 /*
 # Accordion
 
@@ -53,7 +54,7 @@ var cssFile = `
 export class Home extends React.Component {
 
   render() {
-    return <Docs markdown={[cssFile]}/>;
+    return <Docs markdown={{ test: file }} />;
   }
 }
 
