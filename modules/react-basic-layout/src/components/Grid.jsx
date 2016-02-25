@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
-var React = require('react');
-var ReactCSS = require('reactcss');
+var React = require('react')
+var ReactCSS = require('reactcss')
 
 class Grid extends ReactCSS.Component {
 
@@ -90,7 +90,7 @@ class Grid extends ReactCSS.Component {
           display: 'none',
         },
       },
-    };
+    }
   }
 
   styles() {
@@ -99,7 +99,7 @@ class Grid extends ReactCSS.Component {
       'mobile-one': this.props.preset === 'one' && document.getElementById('root').clientWidth < 500,
       'mobile-two': this.props.preset === 'two' && document.getElementById('root').clientWidth < 500,
       'mobile-three': this.props.preset === 'three' && document.getElementById('root').clientWidth < 500,
-    });
+    })
   }
 
   render() {
@@ -108,12 +108,12 @@ class Grid extends ReactCSS.Component {
         <div is="left">{ this.props.children[0] }</div>
         <div is="main">{ this.props.children[1] }</div>
       </div>
-    );
+    )
   }
 }
 
 Grid.defaultProps = {
   preset: 'default',
-};
+}
 
-module.exports = Grid;
+module.exports = Grid

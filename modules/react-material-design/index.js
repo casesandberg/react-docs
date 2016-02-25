@@ -4,4 +4,4 @@ module.exports = {
   Tile: require('./lib/components/Tile'),
 
   Tabs: require('./lib/components/Tabs'),
-};
+}

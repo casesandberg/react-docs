@@ -1,31 +1,31 @@
-'use strict';
+'use strict'
 
-var React = require('react');
-var _ = require('lodash');
+var React = require('react')
+var _ = require('lodash')
 
 class Link extends React.Component {
 
   constructor() {
-    super();
-    this.handleClick = this.handleClick.bind(this);
+    super()
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick(e) {
     if (this.props.onClick) {
-      this.props.onClick(e, this.props.callbackValue);
+      this.props.onClick(e, this.props.callbackValue)
     }
   }
 
   render() {
 
-    var a;
+    var a
     if (_.isString(this.props.onClick)) {
-      a = <a style={{ textDecoration: 'none' }} href={ this.props.onClick } target={ this.props.newTab && '_blank' }>{ this.props.children }</a>;
+      a = <a style={{ textDecoration: 'none' }} href={ this.props.onClick } target={ this.props.newTab && '_blank' }>{ this.props.children }</a>
     } else {
-      a = <a style={{ textDecoration: 'none' }} onClick={ this.handleClick }>{ this.props.children }</a>;
+      a = <a style={{ textDecoration: 'none' }} onClick={ this.handleClick }>{ this.props.children }</a>
     }
 
-    return a;
+    return a
   }
 }
 
@@ -37,6 +37,6 @@ class Link extends React.Component {
 
 Link.defaultProps = {
   newTab: false,
-};
+}
 
-module.exports = Link;
+module.exports = Link

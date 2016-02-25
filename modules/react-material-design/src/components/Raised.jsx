@@ -1,8 +1,8 @@
 /* jshint node: true, esnext: true */
-"use strict";
+"use strict"
 
-var React = require('react');
-var ReactCSS = require('reactcss');
+var React = require('react')
+var ReactCSS = require('reactcss')
 
 class Raised extends ReactCSS.Component {
 
@@ -63,7 +63,7 @@ class Raised extends ReactCSS.Component {
           borderRadius: '50%',
         },
       },
-    };
+    }
   }
 
   render() {
@@ -72,7 +72,7 @@ class Raised extends ReactCSS.Component {
         <div is="bg" />
         <div is="content">{ this.props.children }</div>
       </div>
-    );
+    )
   }
 }
 
@@ -83,12 +83,12 @@ Raised.propTypes = {
     React.PropTypes.string,
     React.PropTypes.number,
   ]),
-};
+}
 
 Raised.defaultProps = {
   background: '#fff',
   zDepth: '1',
   radius: '2px',
-};
+}
 
-module.exports = Raised;
+module.exports = Raised

@@ -1,8 +1,8 @@
 /* jshint node: true, esnext: true */
-"use strict";
+"use strict"
 
-var React = require('react');
-var ReactCSS = require('reactcss');
+var React = require('react')
+var ReactCSS = require('reactcss')
 
 module.exports = class Tile extends ReactCSS.Component {
 
@@ -56,17 +56,17 @@ module.exports = class Tile extends ReactCSS.Component {
           flexBasis: '28',
         },
       },
-    };
+    }
   }
 
   styles() {
     return this.css({
       'clickable': this.props.onClick,
-    });
+    })
   }
 
   render() {
-    var [ sidebar, content ] = this.props.children;
+    var [sidebar, content] = this.props.children
 
     return (
       <div is="tile" className="flexbox-fix">
@@ -80,6 +80,6 @@ module.exports = class Tile extends ReactCSS.Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
-};
+}

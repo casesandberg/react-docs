@@ -1,14 +1,14 @@
-'use strict';
+'use strict'
 
-var React = require('react');
-var ReactCSS = require('reactcss');
+var React = require('react')
+var ReactCSS = require('reactcss')
 
 class Tab extends ReactCSS.Component {
 
   constructor() {
-    super();
+    super()
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this)
   }
 
   classes() {
@@ -36,30 +36,30 @@ class Tab extends ReactCSS.Component {
           opacity: '.87',
         },
       },
-    };
+    }
   }
 
   handleClick() {
     if (this.props.selectable !== false) {
-      this.props.onClick(this.props.tab);
+      this.props.onClick(this.props.tab)
     }
   }
 
   render() {
     return (
       <div is="tab" onClick={ this.handleClick }>{ this.props.children }</div>
-    );
+    )
   }
 
 }
 
 Tab.propTypes = {
   selected: React.PropTypes.bool,
-};
+}
 
 Tab.defaultProps = {
   selected: false,
   color: '#fff',
-};
+}
 
-module.exports = Tab;
+module.exports = Tab

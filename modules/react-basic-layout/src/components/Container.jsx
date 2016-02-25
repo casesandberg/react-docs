@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
-var React = require('react');
-var ReactCSS = require('reactcss');
+var React = require('react')
+var ReactCSS = require('reactcss')
 
 class Container extends ReactCSS.Component {
 
@@ -14,16 +14,16 @@ class Container extends ReactCSS.Component {
           margin: '0 auto',
         },
       },
-    };
+    }
   }
 
   render() {
-    return <div is="container">{ this.props.children }</div>;
+    return <div is="container">{ this.props.children }</div>
   }
 }
 
 Container.defaultProps = {
   width: 960,
-};
+}
 
-module.exports = Container;
+module.exports = Container
