@@ -1,23 +1,23 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import ReactCSS from 'reactcss';
+import React from 'react'
+import ReactCSS from 'reactcss'
 
 export const getLinkPath = (path, location) => {
-  var string = '';
+  var string = ''
 
   path.map((pathItem, i) => {
     if (i <= location) {
       if (i !== 0) {
-        string += '/';
+        string += '/'
       }
 
-      string += pathItem;
+      string += pathItem
     }
-  });
+  })
 
-  return string;
-};
+  return string
+}
 
 export class Breadcrumbs extends ReactCSS.Component {
 
@@ -39,7 +39,7 @@ export class Breadcrumbs extends ReactCSS.Component {
           padding: '0 10px',
         },
       },
-    };
+    }
   }
 
   render() {
@@ -53,15 +53,15 @@ export class Breadcrumbs extends ReactCSS.Component {
                 <a href={ getLinkPath(this.props.route.split('/'), i) } style={ this.styles().link }>{ routeItem }</a>
                 <span  style={ this.styles().slash }>/</span>
               </span>
-            );
+            )
           } else {
-            return <span style={ this.styles().item } key={ i }>{ routeItem }</span>;
+            return <span style={ this.styles().item } key={ i }>{ routeItem }</span>
           }
 
         }) }
       </div>
-    );
+    )
   }
 }
 
-export default Breadcrumbs;
+export default Breadcrumbs

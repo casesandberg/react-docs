@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import ReactCSS from 'reactcss';
+import React from 'react'
+import ReactCSS from 'reactcss'
 
-import MenuItem from './MenuItem';
+import MenuItem from './MenuItem'
 
 export class Menu extends ReactCSS.Component {
 
@@ -12,18 +12,18 @@ export class Menu extends ReactCSS.Component {
       'default': {
 
       },
-    };
+    }
   }
 
   render() {
     return (
       <div>
         { this.props.items.map((item, i) => {
-          return <MenuItem partialPath={ this.props.route } key={ i } {...item} />;
+          return <MenuItem partialPath={ this.props.route } key={ i } {...item} />
         }) }
       </div>
-    );
+    )
   }
 }
 
-export default Menu;
+export default Menu

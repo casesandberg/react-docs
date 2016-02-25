@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import ReactCSS from 'reactcss';
+import React from 'react'
+import ReactCSS from 'reactcss'
 
-import Menu from '../common/Menu';
+import Menu from '../common/Menu'
 
 export class MaterialStyleSidebarMenu extends ReactCSS.Component {
 
@@ -12,7 +12,7 @@ export class MaterialStyleSidebarMenu extends ReactCSS.Component {
       'default': {
 
       },
-    };
+    }
   }
 
   render() {
@@ -56,8 +56,8 @@ export class MaterialStyleSidebarMenu extends ReactCSS.Component {
           },
         ]} route={ this.props.route } />
       </div>
-    );
+    )
   }
 }
 
-export default MaterialStyleSidebarMenu;
+export default MaterialStyleSidebarMenu

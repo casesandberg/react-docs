@@ -1,14 +1,14 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import ReactCSS from 'reactcss';
+import React from 'react'
+import ReactCSS from 'reactcss'
 
-import MaterialStyleSidebar from './MaterialStyleSidebar';
-import Breadcrumbs from '../common/Breadcrumbs';
-import Markdown from '../../../modules/react-markdown/src/index';
+import MaterialStyleSidebar from './MaterialStyleSidebar'
+import Breadcrumbs from '../common/Breadcrumbs'
+import Markdown from '../../../modules/react-markdown/src/index'
 
 const markdownTest = `
-# Welcome.
+//Welcome.
 
 The following Style Guide is a tool for developers and designers to use to ensure that a consistent design
 experience is maintained throughout GrubCentral. If you’re looking for either the visual design language or
@@ -20,12 +20,12 @@ up to date information.
 
 ---
 
-### Be Principled
+//# Be Principled
 
 As a GrubHub Product Designer, the following principles are in place to guide our design process and serve as
 solid footing for which all GrubHub products are built upon. The desire to create innovative products starts, and
 ends, with a mutual respect and understanding of our design principles.
-`;
+`
 
 export class MaterialStyle extends ReactCSS.Component {
 
@@ -53,7 +53,7 @@ export class MaterialStyle extends ReactCSS.Component {
           padding: '30px',
         },
       },
-    };
+    }
   }
 
   render() {
@@ -71,8 +71,8 @@ export class MaterialStyle extends ReactCSS.Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default MaterialStyle;
+export default MaterialStyle

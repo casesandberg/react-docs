@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import ReactCSS from 'reactcss';
+import React from 'react'
+import ReactCSS from 'reactcss'
 
-import MaterialStyleSidebarMenu from './MaterialStyleSidebarMenu';
+import MaterialStyleSidebarMenu from './MaterialStyleSidebarMenu'
 
 export class MaterialStyleSidebar extends ReactCSS.Component {
 
@@ -20,7 +20,7 @@ export class MaterialStyleSidebar extends ReactCSS.Component {
           fontSmoothing: 'antialiased',
         },
       },
-    };
+    }
   }
 
   render() {
@@ -31,8 +31,8 @@ export class MaterialStyleSidebar extends ReactCSS.Component {
           <MaterialStyleSidebarMenu route={ this.props.route } />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default MaterialStyleSidebar;
+export default MaterialStyleSidebar

@@ -1,91 +1,91 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import ReactCSS from 'reactcss';
-import markdown from '../helpers/markdown';
+import React from 'react'
+import ReactCSS from 'reactcss'
+import markdown from '../helpers/markdown'
 
-import { Grid } from '../../modules/react-basic-layout/index';
-import MarkdownTitle from './MarkdownTitle';
-import Markdown from './Markdown';
-import Code from './Code';
-import Sidebar from './Sidebar';
+import { Grid } from '../../modules/react-basic-layout/index'
+import MarkdownTitle from './MarkdownTitle'
+import Markdown from './Markdown'
+import Code from './Code'
+import Sidebar from './Sidebar'
 
-import MaterialStyle from './material-style/MaterialStyle';
+import MaterialStyle from './material-style/MaterialStyle'
 
 export class Docs extends ReactCSS.Component {
 
   constructor() {
-    super();
+    super()
     this.state = {
       sidebarFixed: false,
       visible: false,
       files: {},
       route: 'Design/foo bar',
-    };
-    this.changeSelection = this.changeSelection.bind(this);
-    this.attachSidebar = this.attachSidebar.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
+    }
+    this.changeSelection = this.changeSelection.bind(this)
+    this.attachSidebar = this.attachSidebar.bind(this)
+    this.handleScroll = this.handleScroll.bind(this)
   }
 
   classes() {
     return {
       'default': {
       },
-    };
+    }
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll, false);
+    window.addEventListener('scroll', this.handleScroll, false)
 
-    var domFiles = this.refs.files && this.refs.files.children;
+    var domFiles = this.refs.files && this.refs.files.children
 
     if (domFiles) {
-      var files = {};
+      var files = {}
       for (var i = 0; i < domFiles.length; i++) {
-        var file = domFiles[i];
-        files[file.offsetTop] = file.id;
+        var file = domFiles[i]
+        files[file.offsetTop] = file.id
       }
 
-      this.setState({ files: files });
+      this.setState({ files: files })
     }
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll, false);
+    window.removeEventListener('scroll', this.handleScroll, false)
   }
 
   handleScroll(e) {
-    this.changeSelection();
-    this.attachSidebar();
+    this.changeSelection()
+    this.attachSidebar()
   }
 
   attachSidebar() {
-    var sidebarTop = this.refs.sidebar.getBoundingClientRect().top;
+    var sidebarTop = this.refs.sidebar.getBoundingClientRect().top
 
     if (sidebarTop <= 0 && this.state.sidebarFixed === false) {
-      this.setState({ sidebarFixed: true });
+      this.setState({ sidebarFixed: true })
     }
 
     if (sidebarTop > 0 && this.state.sidebarFixed === true) {
-      this.setState({ sidebarFixed: false });
+      this.setState({ sidebarFixed: false })
     }
   }
 
   changeSelection() {
-    var top = document.body.scrollTop - 300;
-    var mostVisible = '';
+    var top = document.body.scrollTop - 300
+    var mostVisible = ''
 
     for (var offset in this.state.files) {
       if (this.state.files.hasOwnProperty(offset)) {
-        var id = this.state.files[offset];
+        var id = this.state.files[offset]
         if (offset < top) {
-          mostVisible = id;
+          mostVisible = id
         }
       }
     }
 
     if (mostVisible !== this.state.visible) {
-      this.setState({ visible: mostVisible });
+      this.setState({ visible: mostVisible })
     }
   }
 
@@ -179,12 +179,12 @@ export class Docs extends ReactCSS.Component {
     //   </div>
     // );
 
-    return <MaterialStyle route={ this.state.route } />;
+    return <MaterialStyle route={ this.state.route } />
   }
 }
 
 Docs.defaultProps = {
   primaryColor: '#03A9F4',
-};
+}
 
-export default Docs;
+export default Docs

@@ -1,16 +1,16 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import ReactCSS from 'reactcss';
-import markdown from '../helpers/markdown';
-import context from 'react-context';
+import React from 'react'
+import ReactCSS from 'reactcss'
+import markdown from '../helpers/markdown'
+import context from 'react-context'
 
-import { Tile, Raised } from '../../modules/react-material-design/index';
+import { Tile, Raised } from '../../modules/react-material-design/index'
 
 export class Code extends ReactCSS.Component {
 
   constructor() {
-    super();
+    super()
   }
 
   classes() {
@@ -66,28 +66,28 @@ export class Code extends ReactCSS.Component {
           lineHeight: '15px',
         },
       },
-    };
+    }
   }
 
   styles() {
     return this.css({
       'condensed': this.context.width < 500,
-    });
+    })
   }
 
   render() {
-    var code = markdown.getBody(this.props.file);
-    var args = markdown.getArgs(this.props.file);
-    var colorCoded = markdown.renderCode('```\n' + code + '```').trim();
-    var lineCount = colorCoded.split('\n').length;
+    var code = markdown.getBody(this.props.file)
+    var args = markdown.getArgs(this.props.file)
+    var colorCoded = markdown.renderCode('```\n' + code + '```').trim()
+    var lineCount = colorCoded.split('\n').length
 
-    var lines;
+    var lines
     if (args.lineDecoration) {
-      lines = args.lineDecoration;
+      lines = args.lineDecoration
     } else {
-      lines = [];
+      lines = []
       for (var i = 1; i < lineCount; i++) {
-        lines.push(<div key={ i }>{ i }</div>);
+        lines.push(<div key={ i }>{ i }</div>)
       }
     }
 
@@ -112,10 +112,10 @@ export class Code extends ReactCSS.Component {
         </Tile>
 
       </Raised>
-    );
+    )
   }
 }
 
-Code.contextTypes = context.subscribe(['width']);
+Code.contextTypes = context.subscribe(['width'])
 
-export default Code;
+export default Code

@@ -1,10 +1,10 @@
 /* jshint node: true, esnext: true */
-"use strict";
+"use strict"
 
-import React from 'react';
-import ReactCSS from 'reactcss';
+import React from 'react'
+import ReactCSS from 'reactcss'
 
-import { Tile } from '../../modules/react-material-design/index';
+import { Tile } from '../../modules/react-material-design/index'
 
 export class SidebarItem extends ReactCSS.Component {
 
@@ -39,7 +39,7 @@ export class SidebarItem extends ReactCSS.Component {
           color: this.props.primaryColor,
         },
       },
-    };
+    }
   }
 
   render() {
@@ -50,8 +50,8 @@ export class SidebarItem extends ReactCSS.Component {
           <a href={ this.props.href } is="sidebarItem">{ this.props.label }</a>
         </Tile>
       </div>
-    );
+    )
   }
-};
+}
 
-export default SidebarItem;
+export default SidebarItem

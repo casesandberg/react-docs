@@ -1,12 +1,12 @@
 /* jshint node: true, esnext: true */
-"use strict";
+"use strict"
 
-import React from 'react';
-import ReactCSS from 'reactcss';
-import markdown from '../helpers/markdown';
+import React from 'react'
+import ReactCSS from 'reactcss'
+import markdown from '../helpers/markdown'
 
-import { Tile } from '../../modules/react-material-design/index';
-import SidebarItem from './SidebarItem';
+import { Tile } from '../../modules/react-material-design/index'
+import SidebarItem from './SidebarItem'
 
 export class Sidebar extends ReactCSS.Component {
 
@@ -35,22 +35,22 @@ export class Sidebar extends ReactCSS.Component {
           display: 'block',
         },
       },
-    };
+    }
   }
 
   render() {
 
-    var sidebarItems = [];
+    var sidebarItems = []
 
     for (var fileName in this.props.files) {
       if (this.props.files.hasOwnProperty(fileName)) {
-        var file = this.props.files[fileName];
-        var args = markdown.getArgs(file);
-        var sectionNumber;
+        var file = this.props.files[fileName]
+        var args = markdown.getArgs(file)
+        var sectionNumber
         if (markdown.isSubSection(fileName)) {
-          sectionNumber = fileName.split('-')[0];
+          sectionNumber = fileName.split('-')[0]
         } else {
-          sectionNumber = false;
+          sectionNumber = false
         }
 
         sidebarItems.push(
@@ -61,7 +61,7 @@ export class Sidebar extends ReactCSS.Component {
             bold={ sectionNumber && true }
             label={ args.title }
             primaryColor={ this.props.primaryColor } />
-        );
+        )
       }
     }
 
@@ -75,8 +75,8 @@ export class Sidebar extends ReactCSS.Component {
         { sidebarItems }
 
       </div>
-    );
+    )
   }
-};
+}
 
-export default Sidebar;
+export default Sidebar
