@@ -1,1 +1,1 @@
-module.exports = require('./components/Docs')
+export Docs from './components/Docs'
