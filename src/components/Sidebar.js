@@ -1,11 +1,9 @@
-/* jshint node: true, esnext: true */
-"use strict"
+'use strict'
 
 import React from 'react'
 import ReactCSS from 'reactcss'
 import markdown from '../helpers/markdown'
 
-import { Tile } from '../../modules/react-material-design/index'
 import SidebarItem from './SidebarItem'
 
 export class Sidebar extends ReactCSS.Component {
@@ -39,14 +37,13 @@ export class Sidebar extends ReactCSS.Component {
   }
 
   render() {
+    const sidebarItems = []
 
-    var sidebarItems = []
-
-    for (var fileName in this.props.files) {
+    for (let fileName in this.props.files) {
       if (this.props.files.hasOwnProperty(fileName)) {
-        var file = this.props.files[fileName]
-        var args = markdown.getArgs(file)
-        var sectionNumber
+        const file = this.props.files[fileName]
+        const args = markdown.getArgs(file)
+        let sectionNumber
         if (markdown.isSubSection(fileName)) {
           sectionNumber = fileName.split('-')[0]
         } else {
@@ -54,13 +51,15 @@ export class Sidebar extends ReactCSS.Component {
         }
 
         sidebarItems.push(
-          <SidebarItem key={ fileName }
+          <SidebarItem
+            key={ fileName }
             sidebarNumber={ sectionNumber }
-            href={ '#' + args.id }
+            href={ `#${ args.id }` }
             active={ this.props.active === args.id }
             bold={ sectionNumber && true }
             label={ args.title }
-            primaryColor={ this.props.primaryColor } />
+            primaryColor={ this.props.primaryColor }
+          />
         )
       }
     }

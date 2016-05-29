@@ -25,24 +25,31 @@ export class Markdown extends ReactCSS.Component {
   }
 
   render() {
-    var children = this.props.children
+    const children = this.props.children
 
-    var newLines = children
+    let newLines = children
 
-    var codes = []
-    for (var i = 0; i < markdown.isCode(children).length; i++) {
-      var codeBlock = markdown.isCode(children)[i]
-      newLines = newLines.replace(codeBlock[1], '|Code:' + i + '|')
+    const codes = []
+    for (let i = 0; i < markdown.isCode(children).length; i++) {
+      const codeBlock = markdown.isCode(children)[i]
+      newLines = newLines.replace(codeBlock[1], `|Code:${ i }|`)
       codes[i] = <Code file={ codeBlock[2] } condensed={ this.props.condensed } borders />
     }
 
-    var markdownFile = []
-    for (var i = 0; i < newLines.split('\n').length; i++) {
-      var line = newLines.split('\n')[i]
+    const markdownFile = []
+    for (let i = 0; i < newLines.split('\n').length; i++) {
+      const line = newLines.split('\n')[i]
       if (markdown.isCodeBlock(line)) {
         markdownFile.push(<div key={ i }>{ codes[markdown.codeNumber(line)] }</div>)
       } else {
-        markdownFile.push(<div key={ i } is="markdown" className="markdown text" dangerouslySetInnerHTML={ { __html: markdown.render(line) } } />)
+        markdownFile.push(
+          <div
+            key={ i }
+            is="markdown"
+            className="markdown text"
+            dangerouslySetInnerHTML={ { __html: markdown.render(line) } }
+          />
+        )
       }
     }
 

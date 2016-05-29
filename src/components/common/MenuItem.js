@@ -7,10 +7,10 @@ export class MenuItem extends ReactCSS.Component {
 
   constructor(props) {
     super()
-    var splitPath = String(props.partialPath).split('/')
+    const splitPath = String(props.partialPath).split('/')
     this.state = {
       isOpen: splitPath[0] === props.label || false,
-      splitPath: splitPath,
+      splitPath,
     }
     this.handleClick = this.handleClick.bind(this)
   }

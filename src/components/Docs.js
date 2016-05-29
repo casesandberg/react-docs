@@ -2,13 +2,6 @@
 
 import React from 'react'
 import ReactCSS from 'reactcss'
-import markdown from '../helpers/markdown'
-
-import { Grid } from '../../modules/react-basic-layout/index'
-import MarkdownTitle from './MarkdownTitle'
-import Markdown from './Markdown'
-import Code from './Code'
-import Sidebar from './Sidebar'
 
 import MaterialStyle from './material-style/MaterialStyle'
 

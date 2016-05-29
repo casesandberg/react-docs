@@ -1,4 +1,4 @@
-'use strict'
+'use strict' /* eslint max-len: 0*/
 
 import React from 'react'
 import ReactCSS from 'reactcss'
@@ -67,7 +67,7 @@ export class MaterialStyle extends ReactCSS.Component {
             <Breadcrumbs route={ this.props.route } />
           </div>
           <div style={ this.styles().body }>
-            <Markdown text={ markdownTest }/>
+            <Markdown text={ markdownTest } />
           </div>
         </div>
       </div>

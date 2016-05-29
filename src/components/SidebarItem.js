@@ -1,5 +1,4 @@
-/* jshint node: true, esnext: true */
-"use strict"
+'use strict'
 
 import React from 'react'
 import ReactCSS from 'reactcss'

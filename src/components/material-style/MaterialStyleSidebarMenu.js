@@ -18,43 +18,46 @@ export class MaterialStyleSidebarMenu extends ReactCSS.Component {
   render() {
     return (
       <div>
-        <Menu items={[
-          {
-            label: 'Overview',
-          },
-          {
-            label: 'Design',
-            children: [
-              {
-                label: 'foo bar',
-              },
-            ],
-          },
-          {
-            label: 'Components',
-            children: [
-              {
-                label: 'foo bar',
-              },
-            ],
-          },
-          {
-            label: 'Layouts',
-            children: [
-              {
-                label: 'foo bar',
-              },
-            ],
-          },
-          {
-            label: 'Resources',
-            children: [
-              {
-                label: 'foo bar',
-              },
-            ],
-          },
-        ]} route={ this.props.route } />
+        <Menu
+          items={ [
+            {
+              label: 'Overview',
+            },
+            {
+              label: 'Design',
+              children: [
+                {
+                  label: 'foo bar',
+                },
+              ],
+            },
+            {
+              label: 'Components',
+              children: [
+                {
+                  label: 'foo bar',
+                },
+              ],
+            },
+            {
+              label: 'Layouts',
+              children: [
+                {
+                  label: 'foo bar',
+                },
+              ],
+            },
+            {
+              label: 'Resources',
+              children: [
+                {
+                  label: 'foo bar',
+                },
+              ],
+            },
+          ] }
+          route={ this.props.route }
+        />
       </div>
     )
   }

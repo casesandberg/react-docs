@@ -8,11 +8,6 @@ import context from 'react-context'
 import { Tile, Raised } from '../../modules/react-material-design/index'
 
 export class Code extends ReactCSS.Component {
-
-  constructor() {
-    super()
-  }
-
   classes() {
     return {
       'default': {
@@ -76,17 +71,17 @@ export class Code extends ReactCSS.Component {
   }
 
   render() {
-    var code = markdown.getBody(this.props.file)
-    var args = markdown.getArgs(this.props.file)
-    var colorCoded = markdown.renderCode('```\n' + code + '```').trim()
-    var lineCount = colorCoded.split('\n').length
+    const code = markdown.getBody(this.props.file)
+    const args = markdown.getArgs(this.props.file)
+    const colorCoded = markdown.renderCode(`\`\`\`\n${ code }\`\`\``).trim()
+    const lineCount = colorCoded.split('\n').length
 
-    var lines
+    let lines
     if (args.lineDecoration) {
       lines = args.lineDecoration
     } else {
       lines = []
-      for (var i = 1; i < lineCount; i++) {
+      for (let i = 1; i < lineCount; i++) {
         lines.push(<div key={ i }>{ i }</div>)
       }
     }
@@ -99,15 +94,15 @@ export class Code extends ReactCSS.Component {
             { lines }
           </div>
           <div is="center">
-            <style>{`
+            <style>{ `
               .rendered pre{
                 margin: 0;
               }
               .rendered p{
                 margin: 0;
               }
-            `}</style>
-            <div className="rendered" dangerouslySetInnerHTML={{ __html: colorCoded }} />
+            ` }</style>
+            <div className="rendered" dangerouslySetInnerHTML={ { __html: colorCoded } } />
           </div>
         </Tile>
 
