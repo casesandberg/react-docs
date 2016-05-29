@@ -1,3 +1,5 @@
 'use strict'
 
-export Docs from './components/Docs'
+import Docs from './components/Docs'
+
+export default Docs

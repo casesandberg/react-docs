@@ -2,9 +2,9 @@
 
 import React from 'react'
 
-import { Docs } from '../../src/index.js'
+import Docs from '../../src/index.js'
 
-var file =
+const file =
 `
 /*
 //Accordion
@@ -54,7 +54,7 @@ var file =
 export class Home extends React.Component {
 
   render() {
-    return <Docs markdown={{ test: file }} />
+    return <Docs markdown={ { test: file } } />
   }
 }
 
